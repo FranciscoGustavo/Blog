@@ -1,0 +1,11 @@
+extends ../layouts/template.pug
+
+block content
+    
+    .container-fluid
+        .container.mt-5
+            h1.text-center Add New Proyect
+            .row
+                .col-12.col-md-5.m-auto
+                    form(method="POST" action="/projects/")
+                        include ./form.pug

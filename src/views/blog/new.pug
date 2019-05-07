@@ -1,0 +1,7 @@
+extends ../layouts/template.pug
+
+block content
+    .mdl-grid.portfilio-max-width
+        .mdl-cell.mdl-ceel--12-col
+            form(method="POST" action="/blog/" enctype="multipart/form-data")
+                include ./form.pug

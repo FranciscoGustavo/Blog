@@ -1,0 +1,10 @@
+extends ../layouts/template.pug
+
+block content
+    .container-fluid
+        .container.mt-5
+            .row 
+                .col-12.col-md-5.m-auto
+                    form(method="POST" action="/projects/" + project._id)  
+                        input(type="hidden" name="_method" value="PUT")
+                        include ./form.pug

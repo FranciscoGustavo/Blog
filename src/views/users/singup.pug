@@ -1,0 +1,33 @@
+extends ../layouts/templateClean.pug
+
+block content
+    .container-fluid
+        .container
+            .row
+                .col-12.col-sm-7.col-md-5.m-auto
+                    .p-3.mt-5.shadow
+                        h2.text-center.mb-4 Registrate
+                        form#singup(action="/singup" method="POST" enctype="multipart/form-data")
+                            .form-avatar.text-center
+                                img(src="/img/avatar.png")#avatar
+                                label(for="photo").btn.btn-primary Selecionar foto
+                                input(type="file" id="photo" name="photo").d-none
+
+                            .form-group
+                                label(for="name") Nombre
+                                input(type="text" id="name" name="name" aria-describedby="emailHelp" placeholder="Nombre Completo").form-control
+
+                            .form-group
+                                label(for="email") Correo Electronico
+                                input(type="email" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email").form-control
+                            
+                            .form-group
+                                label(for="password") Contraseña
+                                input(type="password" id="password" name="password" placeholder="Contraseña").form-control
+                            
+                            .row.mt-4
+                                .col-6.text-left
+                                    button(type="submit").btn.btn-primary Crear cuenta
+                                .col-6.text-right
+                                    a(href="/singin") Iniciar Sesion
+    

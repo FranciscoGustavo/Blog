@@ -1,0 +1,15 @@
+header.mdl-layout__header.mdl-layout__header--waterfall.portfolio-header
+    .mdl-layout__drawer-button.mdl-layout--small-screen-only(aria-expanded="false" role="button" tabindex="0")
+        i.material-icons 
+    .mdl-layout__header-row.portfolio-logo-row
+        span.mdl-layout__title
+            .portfolio-logo
+            .mdl-layout__title Biblioteca Geek
+
+    .mdl-layout__header-row.portfolio-navigation-row.mdl-layout--large-screen-only
+        nav.mdl-navigation.mdl-typography--body-1-force-preferred-font
+            include ./menu.pug
+
+.mdl-layout__drawer.mdl-layout--small-screen-only
+    nav.mdl-navigation.mdl-typography--body-1-force-preferred-font
+        include ./menu.pug
