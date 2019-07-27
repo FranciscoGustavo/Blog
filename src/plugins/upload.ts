@@ -1,7 +1,8 @@
 import multer, { DiskStorageOptions } from 'multer';
+import { Request } from 'express';
 
 let storage = multer.diskStorage({
-    destination: function (req: Request, file: any, cb: Function) {
+    destination(req, file: any, cb: Function) {
         cb(null, __dirname + '/../../uploads/users');
     },
     filename: function (req: Request, file: any, cb: Function) {
@@ -11,7 +12,7 @@ let storage = multer.diskStorage({
 });
 
 let storagePosts = multer.diskStorage({
-    destination: function (req: Request, file: any, cb: Function) {
+    destination(req, file: any, cb: Function) {
         cb(null, __dirname + '/../uploads/posts');
     },
     filename: function (req: Request, file: any, cb: Function) {
@@ -25,7 +26,7 @@ let upload = multer({ storage: storage });
 let uploadPosts = multer({ storage: storagePosts });
 
 let UploadGallery = multer.diskStorage({
-    destination: function (req: Request, file: any, cb: Function) {
+    destination(req, file: any, cb: Function) {
         cb(null, __dirname + '/../uploads/gallery');
     },
     filename: function (req: Request, file: any, cb: Function) {

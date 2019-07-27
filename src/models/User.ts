@@ -1,6 +1,6 @@
 // Import modules
 import mongoose, { Schema, Document } from 'mongoose';
-import mongooseBcrypt from 'mongoose-bcrypt';
+const mongooseBcrypt = require('mongoose-bcrypt');
 
 // Define Interface
 interface IUser extends Document {

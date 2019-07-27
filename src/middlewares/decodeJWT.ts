@@ -1,11 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import unless from 'express-unless';
 
 import { jwtSecret } from '../config/secrets';
 
 export default function (options: any) {
 
-  let decodeJWT = function (req: Request, res: Response, next: NextFunction) {
+  let decodeJWT =  <unless.RequestHandler>( (req: Request, res: Response, next: NextFunction) => {
     // Validate that exist the parameter authorization into headers
     if(!req.headers.authorization) {
       res.status(402).json({ message: 'You need to send the parameter authorization'})
@@ -15,8 +16,9 @@ export default function (options: any) {
       next();
     }
 
-  }
+  });
 
-  decodeJWT.unless = require('express-unless');
+  decodeJWT.unless = unless;
+
   return decodeJWT;
 } 
